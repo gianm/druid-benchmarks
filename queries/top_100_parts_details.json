@@ -1,0 +1,20 @@
+{
+  "intervals": [
+    "1992-01-01T00:00:00.000+00:00/1999-01-01T00:00:00.000+00:00"
+  ],
+  "aggregations": [
+    {
+      "type": "doubleSum",
+      "name": "l_quantity",
+      "fieldName": "l_quantity"
+    }
+  ],
+  "dataSource": "tpch_lineitem_small",
+  "filter": null,
+  "granularity": "all",
+  "postAggregations": null,
+  "queryType": "topN",
+  "dimension": "l_partkey",
+  "metric": "l_quantity",
+  "threshold": 100
+}

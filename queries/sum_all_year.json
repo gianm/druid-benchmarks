@@ -1,0 +1,41 @@
+{
+  "intervals": [
+    "1992-01-01T00:00:00.000+00:00/1999-01-01T00:00:00.000+00:00"
+  ],
+  "aggregations": [
+    {
+      "type": "doubleSum",
+      "name": "l_extendedprice",
+      "fieldName": "l_extendedprice"
+    },
+    {
+      "type": "doubleSum",
+      "name": "l_discount",
+      "fieldName": "l_discount"
+    },
+    {
+      "type": "doubleSum",
+      "name": "l_quantity",
+      "fieldName": "l_quantity"
+    },
+    {
+      "type": "doubleSum",
+      "name": "l_tax",
+      "fieldName": "l_tax"
+    }
+  ],
+  "dataSource": "tpch_lineitem_small",
+  "filter": null,
+  "granularity": {
+    "type": "period",
+    "period": "P1Y",
+    "origin": null,
+    "timeZone": null
+  },
+  "postAggregations": null,
+  "queryType": "timeseries",
+  "context": {
+    "useCache": false,
+    "populateCache": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "queryType": "timeseries",
+  "dataSource": "tpch_lineitem_small",
+  "intervals": [
+    "1992-01-03T00:00:00.000+00:00/1998-11-30T00:00:00.000+00:00"
+  ],
+  "aggregations": [
+    {
+      "type": "count",
+      "name": "count"
+    }
+  ],
+  "granularity": "all"
+}

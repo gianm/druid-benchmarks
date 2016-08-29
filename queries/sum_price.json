@@ -1,0 +1,15 @@
+{
+  "intervals": [
+    "1992-01-01T00:00:00.000+00:00/1999-01-01T00:00:00.000+00:00"
+  ],
+  "aggregations": [
+    {
+      "type": "doubleSum",
+      "name": "l_extendedprice",
+      "fieldName": "l_extendedprice"
+    }
+  ],
+  "dataSource": "tpch_lineitem_small",
+  "granularity": "all",
+  "queryType": "timeseries"
+}
