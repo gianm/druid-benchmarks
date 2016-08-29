@@ -26,5 +26,6 @@
   ],
   "dataSource": "tpch_lineitem_small",
   "granularity": "all",
-  "queryType": "timeseries"
+  "queryType": "groupBy",
+  "dimensions": []
 }

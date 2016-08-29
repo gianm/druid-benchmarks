@@ -1,0 +1,22 @@
+replacements:
+  - file: broker/runtime.properties
+    pattern: 'druid.processing.buffer.sizeBytes=\d+'
+    repl: 'druid.processing.buffer.sizeBytes=@0@'
+  - file: historical/runtime.properties
+    pattern: 'druid.processing.buffer.sizeBytes=\d+'
+    repl: 'druid.processing.buffer.sizeBytes=@0@'
+  - file: broker/runtime.properties
+    pattern: 'druid.query.groupBy.maxOnDiskStorage=\d+'
+    repl: 'druid.query.groupBy.maxOnDiskStorage=@1@'
+  - file: historical/runtime.properties
+    pattern: 'druid.query.groupBy.maxOnDiskStorage=\d+'
+    repl: 'druid.query.groupBy.maxOnDiskStorage=@1@'
+
+cases:
+- [1000000,    10000000000]
+- [10000000,   10000000000]
+- [100000000,  10000000000]
+- [1000000000, 10000000000]
+
+queries:
+  - queries/distinct_partkey_groupby.json

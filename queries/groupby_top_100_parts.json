@@ -11,8 +11,17 @@
   ],
   "dataSource": "tpch_lineitem_small",
   "granularity": "all",
-  "queryType": "topN",
-  "dimension": "l_partkey",
-  "metric": "l_quantity",
-  "threshold": 100
+  "queryType": "groupBy",
+  "dimensions": ["l_partkey"],
+  "limitSpec": {
+    "type": "default",
+    "columns": [
+      {
+        "dimension": "l_quantity",
+        "direction": "descending",
+        "dimensionOrder": "numeric"
+      }
+    ],
+    "limit": 100
+  }
 }

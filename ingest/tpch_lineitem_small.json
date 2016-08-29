@@ -1,0 +1,102 @@
+{
+  "type": "index_hadoop",
+  "spec": {
+    "ioConfig": {
+      "type": "hadoop",
+      "inputSpec": {
+        "type": "static",
+        "paths": "lineitem.tbl.gz"
+      }
+    },
+    "dataSchema": {
+      "dataSource": "tpch_lineitem_small",
+      "granularitySpec": {
+        "type": "uniform",
+        "segmentGranularity": "year",
+        "queryGranularity": "none",
+        "intervals": [
+          "1980-01-01/2021-01-01"
+        ]
+      },
+      "parser": {
+        "type": "string",
+        "parseSpec": {
+          "format": "tsv",
+          "delimiter": "|",
+          "timestampSpec": {
+            "column": "l_shipdate",
+            "format": "auto"
+          },
+          "columns": [
+            "l_orderkey",
+            "l_partkey",
+            "l_suppkey",
+            "l_linenumber",
+            "l_quantity",
+            "l_extendedprice",
+            "l_discount",
+            "l_tax",
+            "l_returnflag",
+            "l_linestatus",
+            "l_shipdate",
+            "l_commitdate",
+            "l_receiptdate",
+            "l_shipinstruct",
+            "l_shipmode",
+            "l_comment"
+          ],
+          "dimensionsSpec": {
+            "dimensions": [
+              "l_orderkey",
+              "l_partkey",
+              "l_suppkey",
+              "l_linenumber",
+              "l_returnflag",
+              "l_linestatus",
+              "l_shipdate",
+              "l_commitdate",
+              "l_receiptdate",
+              "l_shipinstruct",
+              "l_shipmode",
+              "l_comment"
+            ]
+          }
+        }
+      },
+      "metricsSpec": [
+        {
+          "name": "count",
+          "type": "count"
+        },
+        {
+          "type": "longSum",
+          "fieldName": "l_quantity",
+          "name": "l_quantity"
+        },
+        {
+          "type": "doubleSum",
+          "fieldName": "l_extendedprice",
+          "name": "l_extendedprice"
+        },
+        {
+          "type": "doubleSum",
+          "fieldName": "l_discount",
+          "name": "l_discount"
+        },
+        {
+          "type": "doubleSum",
+          "fieldName": "l_tax",
+          "name": "l_tax"
+        }
+      ]
+    },
+    "tuningConfig": {
+      "type": "hadoop",
+      "partitionsSpec": {
+        "type": "hashed",
+        "targetPartitionSize": 5000000
+      },
+      "jobProperties": {}
+    }
+  }
+}

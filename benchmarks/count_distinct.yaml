@@ -1,0 +1,4 @@
+queries:
+  - queries/distinct_partkey_hll.json
+  - queries/distinct_partkey_thetasketch.json
+  - queries/distinct_partkey_groupby.json
