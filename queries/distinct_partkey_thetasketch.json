@@ -1,0 +1,13 @@
+{
+  "queryType": "timeseries",
+  "dataSource": "tpch_lineitem_small",
+  "intervals": "1000/3000",
+  "granularity": "all",
+  "aggregations": [
+    {
+      "name": "distinct_l_partkey_sketch",
+      "type": "thetaSketch",
+      "fieldName": "l_partkey"
+    }
+  ]
+}
