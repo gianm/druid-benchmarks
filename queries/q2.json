@@ -1,0 +1,21 @@
+{
+  "queryType" : "groupBy",
+  "dataSource" : {
+    "type" : "query",
+    "query" : {
+      "queryType": "groupBy",
+      "dataSource": "tpch_lineitem_small",
+      "intervals": "1000/3000",
+      "granularity": "all",
+      "dimensions": [ "l_partkey" ]
+    }
+  },
+  "intervals" : "1000/3000",
+  "granularity" : "all",
+  "aggregations" : [
+    {
+      "name": "distinct_l_partkey",
+      "type": "count"
+    }
+  ]
+}
