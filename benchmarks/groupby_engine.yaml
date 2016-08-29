@@ -9,6 +9,5 @@ cases:
 
 queries:
   - queries/distinct_partkey_groupby.json
-  - queries/groupby_high_card_partkey.json
   - queries/groupby_sum_all.json
   - queries/groupby_top_100_parts.json
